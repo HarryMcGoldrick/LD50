@@ -35,8 +35,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PlayerUtils.Instance.IsPlayerObject(collision.gameObject) && !collision.gameObject.CompareTag("Pickup"))
-            HandleCollision(collision);
+        if (PlayerUtils.Instance.IsPlayerObject(collision.gameObject) || collision.gameObject.CompareTag("Pickup"))
+            return;
 
         if (collision.TryGetComponent<Damagable>(out Damagable damagable))
         {
@@ -48,5 +48,7 @@ public class Projectile : MonoBehaviour
             Vector2 direction = (collision.transform.position - this.transform.position).normalized;
             knockback.Knockback(direction, stats.knockbackForce);
         }
+        
+        HandleCollision(collision);
     }
 }

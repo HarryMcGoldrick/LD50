@@ -23,9 +23,17 @@ public class RigidbodyKnockback : MonoBehaviour
 
     public void Knockback(Vector3 direction, float force, float duration = 0.15f)
     {
-        Debug.Log("Knockback: " + force);
         this.force = force;
         this.direction = direction;
         this.timer = duration;
     }
+
+    public void Knockback(Vector3 position, Vector3 target, float force, float duration = 0.15f)
+    {
+        this.force = force;
+        this.direction = (target - position).normalized;
+        this.timer = duration;
+    }
+
+
 }

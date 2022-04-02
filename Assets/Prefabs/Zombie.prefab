@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 67268633844227509}
   - component: {fileID: 67268633844227510}
   - component: {fileID: 205981627562605923}
+  - component: {fileID: 2342024681447658271}
+  - component: {fileID: 3500905042119354873}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -121,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.061792135, y: -0.058983266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6404834, y: 0.88203347}
   m_EdgeRadius: 0
 --- !u!114 &67268633844227509
 MonoBehaviour:
@@ -173,9 +175,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+  destroyOnDeath: 1
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   OnBeforeDestroy:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2342024681447658271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e54148d4a9c75144bad9f2b9fe3884e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+    serializedVersion: 2
+    m_Bits: 8
+  rate: 1
+  damage: 10
+  radius: 1
+  force: 50
+--- !u!114 &3500905042119354873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82702400f8fa3354a90cdf01a1d57a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  damagable: {fileID: 205981627562605923}
+  flashMaterial: {fileID: 2100000, guid: 73a7a67120db973489d0e74a42831cfe, type: 2}
+  spriteRenderer: {fileID: 67268633844227499}
