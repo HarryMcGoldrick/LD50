@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c8c0756c6725d24aaf387e06e15bd0c, type: 3}
-  m_Name: Handgun
+  m_Name: Three burst
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 95c2e587d515f964eb074bf6a0c4f7df, type: 3}
   displayName: Handgun
   displayDescription: A slow firing gun
   muzzleTransform: {fileID: 0}
   baseStats:
-    fireRate: 1
+    fireRate: 0.1
     damage: 1
-    maxMagazineCapacity: 5
+    maxMagazineCapacity: 3
     projectileSpeed: 10
-    reloadDuration: 0
+    reloadDuration: 2
     knockbackForce: 200
-  bulletsLeft: 5
+  bulletsLeft: 3
   fireSound: {fileID: 0}
   weaponReloadStart: {fileID: 0}
   weaponReloadEnd: {fileID: 0}

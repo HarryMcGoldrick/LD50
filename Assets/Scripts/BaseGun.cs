@@ -82,7 +82,7 @@ public abstract class BaseGun : ScriptableObject
 public struct GunStats
 {
     public float fireRate;
-    public float baseDamage;
+    public float damage;
     public int maxMagazineCapacity;
     public int projectileSpeed;
     public float reloadDuration;

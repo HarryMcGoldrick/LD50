@@ -14,8 +14,7 @@ public class ProjectileGun : BaseGun
             GameObject projectileGO = Instantiate(projectilePrefab);
             projectileGO.transform.position = muzzleTransform.position;
             Projectile projectile = projectileGO.GetComponent<Projectile>();
-            projectile.IntiailizeProjectile(MouseUtils.Instance.GetMouseWorldPosition(), GetStats().projectileSpeed, GetStats().baseDamage);
-            this.bulletsLeft--;
+            projectile.IntiailizeProjectile(MouseUtils.Instance.GetMouseWorldPosition(), GetStats());
         }
     }
 }
