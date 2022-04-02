@@ -11,6 +11,7 @@ public class Damagable : MonoBehaviour
 
     [HideInInspector] public UnityEvent OnDamageTaken = new UnityEvent();
     [HideInInspector] public UnityEvent OnBeforeDestroy = new UnityEvent();
+    [HideInInspector] public UnityEvent OnLethalDamageTaken = new UnityEvent();
 
     private void Start()
     {
@@ -24,9 +25,11 @@ public class Damagable : MonoBehaviour
         this.currentHealth -= damage;
         OnDamageTaken.Invoke();
 
-        if (destroyOnDeath && this.currentHealth <= 0)
+        if (this.currentHealth <= 0)
         {
-            Destroy();
+            OnLethalDamageTaken.Invoke();
+            if (destroyOnDeath)
+                Destroy();
         }
     }
 
