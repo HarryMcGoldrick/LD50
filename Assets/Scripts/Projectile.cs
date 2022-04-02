@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerUtils.Instance.IsPlayerObject(collision.gameObject) || collision.gameObject.CompareTag("Pickup"))
+        if (PlayerUtils.Instance.IsPlayerObject(collision.gameObject) || collision.gameObject.CompareTag("Pickup") || collision.gameObject.CompareTag("Projectile"))
             return;
 
         if (collision.TryGetComponent<Damagable>(out Damagable damagable))

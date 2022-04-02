@@ -18,7 +18,7 @@ public class GunPickup : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<PlayerWeaponInventory>().EquipWeapon(baseGun);
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

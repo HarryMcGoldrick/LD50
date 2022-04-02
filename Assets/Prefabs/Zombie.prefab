@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 205981627562605923}
   - component: {fileID: 2342024681447658271}
   - component: {fileID: 3500905042119354873}
+  - component: {fileID: 4411207531838091421}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -182,6 +183,9 @@ MonoBehaviour:
   OnBeforeDestroy:
     m_PersistentCalls:
       m_Calls: []
+  OnLethalDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2342024681447658271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +221,15 @@ MonoBehaviour:
   damagable: {fileID: 205981627562605923}
   flashMaterial: {fileID: 2100000, guid: 73a7a67120db973489d0e74a42831cfe, type: 2}
   spriteRenderer: {fileID: 67268633844227499}
+--- !u!114 &4411207531838091421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026bab6311503924586d6f7fe6282f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
