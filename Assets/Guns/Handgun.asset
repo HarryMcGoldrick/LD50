@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8c0756c6725d24aaf387e06e15bd0c, type: 3}
+  m_Name: Handgun
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 95c2e587d515f964eb074bf6a0c4f7df, type: 3}
+  displayName: Handgun
+  displayDescription: A slow firing gun
+  muzzleTransform: {fileID: 0}
+  baseStats:
+    fireRate: 0.1
+    baseDamage: 10
+    maxMagazineCapacity: 5
+    projectileSpeed: 10
+    reloadDuration: 1
+    knockbackForce: 10
+  bulletsLeft: 5
+  fireSound: {fileID: 0}
+  weaponReloadStart: {fileID: 0}
+  weaponReloadEnd: {fileID: 0}
+  projectilePrefab: {fileID: 2215817693713569463, guid: 67532cbf9e98c734c837df2ae3dfabf1, type: 3}
