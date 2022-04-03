@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 2342024681447658271}
   - component: {fileID: 3500905042119354873}
   - component: {fileID: 4411207531838091421}
+  - component: {fileID: 835294951830348883}
+  - component: {fileID: 6859395186074889698}
+  - component: {fileID: 3690172277673169444}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -204,7 +207,7 @@ MonoBehaviour:
   rate: 1
   damage: 10
   radius: 1
-  force: 50
+  force: 100
 --- !u!114 &3500905042119354873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,5 +234,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026bab6311503924586d6f7fe6282f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &835294951830348883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62b93e72ae0d904abe7b58f53b59013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: d4b9b1b5ff55ebf429bfec9f12e29895, type: 2}
+  source: {fileID: 0}
+  localSource: 1
+--- !u!114 &6859395186074889698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562367b3813b0242992768a721b4e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: d9c8adf9180061746a8f3be866c3c831, type: 2}
+  source: {fileID: 0}
+  localSource: 1
+--- !u!114 &3690172277673169444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67268633844227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b5ecc67444bfa4f8fb058ad92271e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

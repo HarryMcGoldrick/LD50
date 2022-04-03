@@ -12,9 +12,7 @@ public abstract class BaseGun : ScriptableObject
     public int bulletsLeft;
 
     [Header("Audio")]
-    public AudioClips fireSound;
-    public AudioClips weaponReloadStart;
-    public AudioClips weaponReloadEnd;
+    public AudioClips shootSound;
 
     private bool hasFireRate = true;
     private bool isReloading = false;
@@ -25,6 +23,9 @@ public abstract class BaseGun : ScriptableObject
         hasFireRate = true;
         isReloading = false;
         Reload();
+
+        if (PlayerUtils.Instance.GetWeaponInventory().GetGunCount(this) > AudioManager.Instance.maxGunCountSound)
+            shootSound = null;
     }
 
     protected abstract void Fire();

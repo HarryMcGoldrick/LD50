@@ -6,6 +6,7 @@ public class PlayerUtils : Singleton<PlayerUtils>
 {
     private GameObject player;
     private AudioSource playerAudioSource;
+    private PlayerWeaponInventory weaponInventory;
 
     public GameObject GetPlayerGameObject()
     {
@@ -22,5 +23,19 @@ public class PlayerUtils : Singleton<PlayerUtils>
     public bool IsPlayerObject(GameObject gameObject)
     {
         return gameObject.transform.root.CompareTag("Player");
+    }
+
+    public AudioSource GetPlayerAudioSource()
+    {
+        if (playerAudioSource == null)
+            playerAudioSource = GetPlayerGameObject().GetComponent<AudioSource>();
+        return playerAudioSource;
+    }
+
+    public PlayerWeaponInventory GetWeaponInventory()
+    {
+        if (weaponInventory == null)
+            weaponInventory = GetPlayerGameObject().GetComponent<PlayerWeaponInventory>();
+        return weaponInventory;
     }
 }

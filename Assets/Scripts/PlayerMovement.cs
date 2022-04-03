@@ -7,19 +7,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     private Rigidbody2D rigidBody;
-    //private Animator animator;
     private Vector2 moveDirection;
 
     private void Start()
     {
         this.rigidBody = GetComponent<Rigidbody2D>();
-        //this.animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         SetMovementDirection();
-        //SetAnimatorParameters();
     }
 
     private void FixedUpdate()
@@ -34,11 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = new Vector2(InputX, InputY).normalized;
     }
-
-    //private void SetAnimatorParameters()
-    //{
-    //    this.animator.SetFloat("Velocity", this.rigidBody.velocity.magnitude);
-    //}
 
     private void Move()
     {

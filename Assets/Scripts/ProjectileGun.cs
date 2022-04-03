@@ -15,6 +15,8 @@ public class ProjectileGun : BaseGun
             projectileGO.transform.position = muzzleTransform.position;
             Projectile projectile = projectileGO.GetComponent<Projectile>();
             projectile.IntiailizeProjectile(MouseUtils.Instance.GetMouseWorldPosition(), GetStats());
+            if (shootSound != null)
+                AudioManager.Instance.PlayLocalOneShot(shootSound);
         }
     }
 }

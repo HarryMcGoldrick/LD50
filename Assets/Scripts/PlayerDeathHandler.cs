@@ -15,7 +15,7 @@ public class PlayerDeathHandler : MonoBehaviour
 
     private void HandleDeath()
     {
-        Time.timeScale = 0.0f;
-        UIDeathScreen.Instance.EnableDeathScreen();
+        GameStateManager.Instance.SwitchState(GameState.FREEZE);
+        UIStateManager.Instance.SwitchState(UIState.DEATH);
     }
 }

@@ -6,16 +6,8 @@ using UnityEngine.Events;
 public class PlayerWeaponInventory : MonoBehaviour
 {
     public List<BaseGun> equippedWeapons;
-
-    //public static UnityEvent<BaseGun> OnWeaponFire = new UnityEvent<BaseGun>();
-    //public static UnityEvent<BaseGun> OnWeaponReloadStart = new UnityEvent<BaseGun>();
-    //public static UnityEvent<BaseGun> OnWeaponReloadEnd = new UnityEvent<BaseGun>();
-
+    public Dictionary<string, int> gunCountDictionary = new Dictionary<string, int>();
     public UnityEvent<BaseGun> OnWeaponEquip = new UnityEvent<BaseGun>();
-
-
-    //private RigidbodyKnockback knockbackHandler;
-
 
 
     private void Start()
@@ -24,11 +16,7 @@ public class PlayerWeaponInventory : MonoBehaviour
         {
             equippedWeapons[i] = Instantiate(equippedWeapons[i]);
         }
-
-        //UpdateWeaponVisuals();
-
-        //knockbackHandler = this.transform.root.GetComponent<RigidbodyKnockback>();
-        //UIPlayerHudManager.Instance.UpdateAmmoDisplay(equippedWeapon);
+        gunCountDictionary.Clear();
     }
 
     private void Update()
@@ -40,6 +28,7 @@ public class PlayerWeaponInventory : MonoBehaviour
     {
         BaseGun clonedGun = Instantiate(gun);
         this.equippedWeapons.Add(clonedGun);
+        AddGunToCountDictionary(gun);
         OnWeaponEquip.Invoke(clonedGun);
     }
 
@@ -48,6 +37,28 @@ public class PlayerWeaponInventory : MonoBehaviour
         for (int i = 0; i < equippedWeapons.Count; i++)
         {
             equippedWeapons[i].TryFireWeapon();
+        }
+    }
+
+    public int GetGunCount(BaseGun gun)
+    {
+        if(gunCountDictionary.TryGetValue(gun.displayName , out int count))
+        {
+            return count;
+        } else
+        {
+            return 0;
+        }
+    }
+
+    public void AddGunToCountDictionary(BaseGun gun)
+    {
+        if (gunCountDictionary.ContainsKey(gun.displayName))
+        {
+            gunCountDictionary[gun.displayName] += 1;
+        } else
+        {
+            gunCountDictionary.Add(gun.displayName, 1);
         }
     }
 }
