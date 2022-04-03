@@ -26,7 +26,17 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
         {
             currentWave++;
             timeSinceLastWave = 0;
+        } 
+
+
+        if (currentWave < waves.Length - 1)
+        {
+            Camera.main.backgroundColor = Color.Lerp(waves[currentWave].color, waves[currentWave+1].color, timeSinceLastWave / waves[currentWave].duration);
+        } else
+        {
+            Camera.main.backgroundColor = waves[currentWave].color;
         }
+
 
         timeSinceLastWave += Time.deltaTime;
         updateRateTimer -= Time.deltaTime;
@@ -93,4 +103,5 @@ public struct SpawnWave
     public int maxAmount;
     public float spawnRate;
     public KeyValuePairSerialized<GameObject, float>[] enemiesToSpawn;
+    public Color32 color;
 }

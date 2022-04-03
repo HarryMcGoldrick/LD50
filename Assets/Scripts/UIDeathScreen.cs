@@ -12,7 +12,7 @@ public class UIDeathScreen : Singleton<UIDeathScreen>
     private void Start()
     {
         replayButton.onClick.AddListener(ReplayLevel);
-        exitButton.onClick.AddListener(() => UIStateManager.Instance.SwitchState(UIState.MAIN_MENU));
+        exitButton.onClick.AddListener(ReplayLevel);
     }
 
     public void ReplayLevel()
