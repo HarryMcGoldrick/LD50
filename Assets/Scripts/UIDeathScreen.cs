@@ -12,11 +12,16 @@ public class UIDeathScreen : Singleton<UIDeathScreen>
     private void Start()
     {
         replayButton.onClick.AddListener(ReplayLevel);
+        exitButton.onClick.AddListener(() => UIStateManager.Instance.SwitchState(UIState.MAIN_MENU));
     }
 
     public void ReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        UIStateManager.Instance.SwitchState(UIState.HUD);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

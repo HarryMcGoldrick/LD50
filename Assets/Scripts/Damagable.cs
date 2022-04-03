@@ -20,7 +20,6 @@ public class Damagable : MonoBehaviour
 
     public void InflictDamage(float damage, Vector3 hitPoint)
     {
-        Debug.Log("Inflicting Damage: " + damage);
         //DamageTextManager.Instance.SpawnDamageText(damage, hitPoint);
         this.currentHealth -= damage;
         OnDamageTaken.Invoke();
