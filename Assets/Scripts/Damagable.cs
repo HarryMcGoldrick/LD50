@@ -38,4 +38,9 @@ public class Damagable : MonoBehaviour
         Debug.Log("Destroying");
         Destroy(this.gameObject);
     }
+
+    public void FullHeal()
+    {
+        this.currentHealth = maxHealth;
+    }
 }

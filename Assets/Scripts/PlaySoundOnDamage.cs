@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlaySoundOnDamage : MonoBehaviour
 {
     public AudioClips sound;
-    public AudioSource source;
-    public bool localSource;
 
     private void Start()
     {
@@ -15,12 +13,6 @@ public class PlaySoundOnDamage : MonoBehaviour
 
     private void PlaySound()
     {
-        if (localSource)
-        {
-            AudioManager.Instance.PlayLocalOneShot(sound);
-        } else
-        {
-            AudioManager.Instance.PlayOneShot(sound, source);
-        }
+        AudioManager.Instance.PlayLocalOneShot(sound);
     }
 }

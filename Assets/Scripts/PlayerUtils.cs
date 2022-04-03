@@ -7,6 +7,7 @@ public class PlayerUtils : Singleton<PlayerUtils>
     private GameObject player;
     private AudioSource playerAudioSource;
     private PlayerWeaponInventory weaponInventory;
+    private PlayerExpManager playerExp;
 
     public GameObject GetPlayerGameObject()
     {
@@ -37,5 +38,12 @@ public class PlayerUtils : Singleton<PlayerUtils>
         if (weaponInventory == null)
             weaponInventory = GetPlayerGameObject().GetComponent<PlayerWeaponInventory>();
         return weaponInventory;
+    }
+
+    public PlayerExpManager GetPlayerExpManager()
+    {
+        if (playerExp == null)
+            playerExp = GetPlayerGameObject().GetComponent<PlayerExpManager>();
+        return playerExp;
     }
 }

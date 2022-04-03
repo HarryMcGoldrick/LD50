@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-public class GunPickup : MonoBehaviour
+public class GunPickup : BasePickup
 {
     public BaseGun baseGun;
 
@@ -12,13 +11,10 @@ public class GunPickup : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = baseGun.sprite;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    protected override void ConsumePickup()
     {
-        Debug.Log(collision.name);
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerWeaponInventory>().EquipWeapon(baseGun);
-            Destroy(this.gameObject);
-        }
+        PlayerUtils.Instance.GetWeaponInventory().EquipWeapon(baseGun);
+        Destroy(this.gameObject);
     }
 }

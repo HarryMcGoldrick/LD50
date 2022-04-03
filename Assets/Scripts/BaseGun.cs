@@ -23,7 +23,7 @@ public abstract class BaseGun : ScriptableObject
         hasFireRate = true;
         isReloading = false;
         Reload();
-
+        
         if (PlayerUtils.Instance.GetWeaponInventory().GetGunCount(this) > AudioManager.Instance.maxGunCountSound)
             shootSound = null;
     }

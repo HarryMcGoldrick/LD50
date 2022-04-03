@@ -4,43 +4,56 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    private AudioSource playerSource;
+    public AudioSource[] playerSfxSources;
     public int maxGunCountSound = 5;
+
+    public Queue<AudioClips> soundQueue = new Queue<AudioClips>();
 
     public void PlayLocalOneShot(AudioClips sound)
     {
-        if (playerSource == null)
-            playerSource = PlayerUtils.Instance.GetPlayerAudioSource();
-        PlayOneShot(sound, playerSource);
+        soundQueue.Enqueue(sound);
     }
 
-    public void PlayOneShot(AudioClips sound, AudioSource source)
+    private void PlayOneShot(AudioClips sound, AudioSource source)
     {
         source.pitch = sound.GetPitch();
         source.PlayOneShot(sound.GetNextClip(), sound.volume);
     }
 
-    public void PlayContinuedSound(AudioSource source, AudioClips sound)
+    private void Update()
     {
-        if (source.clip == null)
-            source.clip = sound.GetNextClip();
-        source.volume = sound.volume;
-
-        if (source.isPlaying)
+        for (int i = 0; i < playerSfxSources.Length; i++)
         {
-            return;
+            if (soundQueue.Count > 0)
+                PlayOneShot(soundQueue.Dequeue(), playerSfxSources[i]);
         }
-
-        source.Play();
     }
 
-    public void PauseContinuedSound(AudioSource source)
-    {
-        source.Pause();
-    }
+
+    //public void PlayContinuedSound(AudioSource source, AudioClips sound)
+    //{
+    //    if (source.clip == null)
+    //        source.clip = sound.GetNextClip();
+    //    source.volume = sound.volume;
+
+    //    if (source.isPlaying)
+    //    {
+    //        return;
+    //    }
+
+    //    source.Play();
+    //}
+
+    //public void PauseContinuedSound(AudioSource source)
+    //{
+    //    source.Pause();
+    //}
 
     public void MuteAudio(bool val)
     {
-        this.playerSource.mute = val;
+        for (int i = 0; i < playerSfxSources.Length; i++)
+        {
+            playerSfxSources[i].mute = val;
+        }
     }
 }
