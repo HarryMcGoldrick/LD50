@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class LootOnDeath : MonoBehaviour
 {
-    //public GameObject spawnPrefab;
+    public GameObject drop;
 
     private void Start()
     {
-        GetComponent<Damagable>().OnBeforeDestroy.AddListener(() => GlobalLootManager.Instance.RollDropTable(this.transform.position));
-
-        // TODO REMOVE -TEMP-
-        GetComponent<Damagable>().OnBeforeDestroy.AddListener(() => ScoreManager.Instance.UpdateScore());
+        GetComponent<Damagable>().OnBeforeDestroy.AddListener(OnDeath);
     }
 
-    //private void SpawnPrefabOnDeath()
-    //{
-    //    GameObject GO = Instantiate(this.spawnPrefab);
-    //    GO.transform.position = this.transform.position;
-    //}
+    private void OnDeath()
+    {
+            if (GlobalLootManager.Quitting)
+                return;
+            GameObject dropGO = Instantiate(drop);
+            dropGO.transform.position = this.transform.position;
+            ScoreManager.Instance.UpdateScore();
+            EnemySpawnManager.Instance.currentSpawnedAmount--;
+    }
+
 }

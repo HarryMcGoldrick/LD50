@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pickup Exp
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 70753f4672f659e4e97cacd84b151ed4, type: 3}
-  volume: 0.25
-  minPitch: 0.9
-  maxPitch: 1.1
+  - {fileID: 8300000, guid: 58d11d3fd6069cf46a8ca435e8538e31, type: 3}
+  volume: 0.15
+  minPitch: 0.8
+  maxPitch: 1
   pitchMode: 0
   clipMode: 0
   pitchIncrement: 0

@@ -35,12 +35,12 @@ public class Damagable : MonoBehaviour
     public void Destroy()
     {
         OnBeforeDestroy.Invoke();
-        Debug.Log("Destroying");
         Destroy(this.gameObject);
     }
 
     public void FullHeal()
     {
         this.currentHealth = maxHealth;
+        OnDamageTaken.Invoke();
     }
 }

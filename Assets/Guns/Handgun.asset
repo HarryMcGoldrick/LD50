@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 95c2e587d515f964eb074bf6a0c4f7df, type: 3}
   displayName: Handgun
-  displayDescription: A slow firing gun
+  displayDescription: Fires a large projectile dealing high damage
   muzzleTransform: {fileID: 0}
   baseStats:
     fireRate: 1
-    damage: 5
+    damage: 10
     maxMagazineCapacity: 5
     projectileSpeed: 10
     reloadDuration: 0
-    knockbackForce: 200
+    knockbackForce: 500
     bulletScale: 1.5
   bulletsLeft: 5
   shootSound: {fileID: 11400000, guid: ce7e70fb149c98d4ab55abaebcc9a206, type: 2}

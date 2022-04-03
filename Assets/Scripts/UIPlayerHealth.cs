@@ -28,17 +28,6 @@ public class UIPlayerHealth : MonoBehaviour
     public Color GetColorForFillValue(float fillValue)
     {
         return Color.Lerp(minHealthColor, maxHealthColor, fillValue);
-
-        //for (int i = 0; i < colorRanges.Length; i++)
-        //{
-        //    if (fillValue <= colorRanges[i].Key)
-        //    {
-        //        return colorRanges[i].Value;
-        //    }
-        //}
-
-        Debug.LogError("No valid color found for health UI");
-        return new Color();
     }
 
 }

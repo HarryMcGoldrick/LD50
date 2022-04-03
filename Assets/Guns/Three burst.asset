@@ -18,12 +18,12 @@ MonoBehaviour:
   muzzleTransform: {fileID: 0}
   baseStats:
     fireRate: 0.1
-    damage: 2
-    maxMagazineCapacity: 3
+    damage: 8
+    maxMagazineCapacity: 5
     projectileSpeed: 15
     reloadDuration: 2
-    knockbackForce: 500
-    bulletScale: 0.8
-  bulletsLeft: 3
+    knockbackForce: 50
+    bulletScale: 1
+  bulletsLeft: 5
   shootSound: {fileID: 11400000, guid: ce7e70fb149c98d4ab55abaebcc9a206, type: 2}
   projectilePrefab: {fileID: 2215817693713569463, guid: 67532cbf9e98c734c837df2ae3dfabf1, type: 3}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7109684131232092047}
   - component: {fileID: 857657502427306992}
   - component: {fileID: 5213882453321356613}
+  - component: {fileID: 6689537124462652325}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Projectile
@@ -169,3 +170,16 @@ MonoBehaviour:
     knockbackForce: 30
     bulletScale: 1
   projectileCount: 10
+--- !u!114 &6689537124462652325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215817693713569463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562367b3813b0242992768a721b4e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 46961f5d9e92fdc4a83dc47ce76b1920, type: 2}

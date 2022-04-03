@@ -9,6 +9,11 @@ public class AudioManager : Singleton<AudioManager>
 
     public Queue<AudioClips> soundQueue = new Queue<AudioClips>();
 
+    private void Start()
+    {
+        playerSfxSources = PlayerUtils.Instance.GetPlayerGameObject().GetComponentsInChildren<AudioSource>();
+    }
+
     public void PlayLocalOneShot(AudioClips sound)
     {
         soundQueue.Enqueue(sound);

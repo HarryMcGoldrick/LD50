@@ -25,5 +25,5 @@ MonoBehaviour:
     knockbackForce: 1000
     bulletScale: 2
   bulletsLeft: 1
-  shootSound: {fileID: 11400000, guid: ce7e70fb149c98d4ab55abaebcc9a206, type: 2}
+  shootSound: {fileID: 11400000, guid: f27417cc45d9407469a040daab8c429f, type: 2}
   projectilePrefab: {fileID: 2215817693713569463, guid: 79b3888359c409744bb760005dc96fc6, type: 3}

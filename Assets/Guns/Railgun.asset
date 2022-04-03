@@ -17,13 +17,13 @@ MonoBehaviour:
   displayDescription: Fires piercing projectiles
   muzzleTransform: {fileID: 0}
   baseStats:
-    fireRate: 10
+    fireRate: 5
     damage: 10
     maxMagazineCapacity: 1
-    projectileSpeed: 20
+    projectileSpeed: 10
     reloadDuration: 0
     knockbackForce: 200
     bulletScale: 1
   bulletsLeft: 1
-  shootSound: {fileID: 11400000, guid: ce7e70fb149c98d4ab55abaebcc9a206, type: 2}
+  shootSound: {fileID: 11400000, guid: a9499b69f91201248838e9b6218e682b, type: 2}
   projectilePrefab: {fileID: 2215817693713569463, guid: 4dd6d4d39cac3344db78c72e61d48d01, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPrefabSpawner : MonoBehaviour
 {
-    public GameObject prefab;
+    //public GameObject prefab;
     public Transform parentTransform;
     public Vector2 spawnSize;
 
@@ -13,15 +13,15 @@ public class EnemyPrefabSpawner : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            timer = EnemySpawnManager.Instance.GetSpawnRate();
-            SpawnEnemy();
-        }
+        //timer -= Time.deltaTime;
+        //if (timer <= 0)
+        //{
+        //    timer = EnemySpawnManager.Instance.GetSpawnRate();
+        //    SpawnEnemy();
+        //}
     }
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(GameObject prefab)
     {
         GameObject GO = Instantiate(prefab);
         GO.transform.position = RandomPointInBounds(GetSpawnBounds());

@@ -8,6 +8,7 @@ public class PlayerExpManager : MonoBehaviour
     public int currentLevel = 0;
     public float currentExp = 0;
     public UnityEvent OnExpAdd = new UnityEvent();
+    public UnityEvent OnLevelUp = new UnityEvent();
     public AudioClips levelupSound;
 
     public void AddExp(int exp)
@@ -25,6 +26,7 @@ public class PlayerExpManager : MonoBehaviour
     {
         currentExp -= GetRequiredExpForNextLevel();
         currentLevel++;
+        OnLevelUp.Invoke();
         AudioManager.Instance.PlayLocalOneShot(levelupSound);
         GetComponent<Damagable>().FullHeal(); 
     }
@@ -32,7 +34,7 @@ public class PlayerExpManager : MonoBehaviour
     public int GetRequiredExpForNextLevel()
     {
         float exponent = 2 * 2;
-        float scale = 5f;
+        float scale = 6f;
         return (int)((currentLevel + 1)  * exponent * scale);
     }
 }

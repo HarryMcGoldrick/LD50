@@ -11,7 +11,7 @@ public class GlobalLootManager : Singleton<GlobalLootManager>
     public void RollDropTable(Vector3 pos)
     {
         RollExp(pos);
-        RollGun(pos);
+        //RollGun(pos);
     }
 
     private void RollExp(Vector3 pos)

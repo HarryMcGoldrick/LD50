@@ -90,5 +90,6 @@ public enum UIState
     MAIN_MENU,
     HUD,
     PAUSE_MENU,
-    DEATH
+    DEATH,
+    LEVELUP_MENU,
 }
