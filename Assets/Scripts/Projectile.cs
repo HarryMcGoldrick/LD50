@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
+    public int collisionsBeforeDestroy = 1;
+    public float lifeTime = 20f;
+    private int collisions = 0;
     private Rigidbody2D rb;
     private Vector3 target;
     private GunStats stats;
@@ -12,7 +15,7 @@ public class Projectile : MonoBehaviour
     {
         this.rb = GetComponent<Rigidbody2D>();
         LaunchProjectile(target);
-        Destroy(this.gameObject, 20f);
+        Destroy(this.gameObject, lifeTime);
     }
 
     public void IntiailizeProjectile(Vector3 target, GunStats stats)
@@ -25,12 +28,16 @@ public class Projectile : MonoBehaviour
     {
         Vector2 direction = target - this.transform.position;
         direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         this.rb.velocity = direction * stats.projectileSpeed;
     }
 
     private void HandleCollision(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        collisions++;
+        if (collisions >= collisionsBeforeDestroy)
+            Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

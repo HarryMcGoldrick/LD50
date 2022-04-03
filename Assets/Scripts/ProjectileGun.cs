@@ -14,6 +14,7 @@ public class ProjectileGun : BaseGun
             GameObject projectileGO = Instantiate(projectilePrefab);
             projectileGO.transform.position = muzzleTransform.position;
             Projectile projectile = projectileGO.GetComponent<Projectile>();
+            projectile.transform.localScale *= GetStats().bulletScale;
             projectile.IntiailizeProjectile(MouseUtils.Instance.GetMouseWorldPosition(), GetStats());
             if (shootSound != null)
                 AudioManager.Instance.PlayLocalOneShot(shootSound);

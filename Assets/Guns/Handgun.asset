@@ -23,6 +23,7 @@ MonoBehaviour:
     projectileSpeed: 10
     reloadDuration: 0
     knockbackForce: 200
+    bulletScale: 1.5
   bulletsLeft: 5
   shootSound: {fileID: 11400000, guid: ce7e70fb149c98d4ab55abaebcc9a206, type: 2}
   projectilePrefab: {fileID: 2215817693713569463, guid: 67532cbf9e98c734c837df2ae3dfabf1, type: 3}

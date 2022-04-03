@@ -7,7 +7,7 @@ public abstract class BaseGun : ScriptableObject
     public Sprite sprite;
     public string displayName;
     public string displayDescription;
-    public Transform muzzleTransform;
+    [HideInInspector] public Transform muzzleTransform;
     [SerializeField] private GunStats baseStats;
     public int bulletsLeft;
 
@@ -88,4 +88,5 @@ public struct GunStats
     public int projectileSpeed;
     public float reloadDuration;
     public float knockbackForce;
+    public float bulletScale;
 }
